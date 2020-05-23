@@ -183,9 +183,16 @@ function calculate()
     result = eval(a+oper+b);
     a = result;
   }
+  var historyitemcontent=screen.innerText;
   screen.innerHTML=result;
   operands.length=0;
   currentoperand=result; 
+
+  var historyitem = document.createElement('li');
+  var listitem = document.createTextNode(historyitemcontent+'='+result);
+  historyitem.appendChild(listitem);
+  var parentlist = document.getElementById('history-list');
+  parentlist.insertBefore(historyitem,document.getElementById('history-list').firstChild);
 
 }
 
@@ -235,4 +242,62 @@ function changethesign(obj)
       console.log(content[i]);
       screen.innerText+= '-'+currentoperand; 
     } 
+}
+
+var buttonpressed = document.addEventListener('keydown',fun);
+
+function fun(event)
+{
+  if(event.keyCode==48||event.keyCode==96)
+  {
+    calculation(document.getElementById('zero'));
+  }else if(event.keyCode==49||event.keyCode==97)
+  {
+    calculation(document.getElementById('one'));
+  }else if(event.keyCode==50||event.keyCode==98)
+  {
+    calculation(document.getElementById('two'));
+  }else if(event.keyCode==51||event.keyCode==99)
+  {
+    calculation(document.getElementById('three'));
+  }else if(event.keyCode==52||event.keyCode==100)
+  {
+    calculation(document.getElementById('four'));
+  }else if(event.keyCode==53||event.keyCode==101)
+  {
+    calculation(document.getElementById('five'));
+  }else if(event.keyCode==54||event.keyCode==102)
+  {
+    calculation(document.getElementById('six'));
+  }else if(event.keyCode==55||event.keyCode==103)
+  {
+    calculation(document.getElementById('seven'));
+  }else if(event.keyCode==56||event.keyCode==104)
+  {
+    calculation(document.getElementById('eight'));
+  }else if(event.keyCode==57||event.keyCode==105)
+  {
+    calculation(document.getElementById('nine'));
+  }else if(event.keyCode==109)
+  {
+    calculation(document.getElementById('subtract'));
+  }else if(event.keyCode==107)
+  {
+    calculation(document.getElementById('add'));
+  }else if(event.keyCode==106)
+  {
+    calculation(document.getElementById('multiply'));
+  }else if(event.keyCode==111)
+  {
+    calculation(document.getElementById('divide'));
+  }else if(event.keyCode==8)
+  {
+    calculation(document.getElementById('backspace'));
+  }else if(event.code=='Enter')
+  {
+    calculate();
+  }else if(event.keyCode==110)
+  {
+    calculation(document.getElementById('decimal'));
+  }
 }
