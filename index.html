@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <main id="main-cnt">
+        <div class='heading'><h1>Calculator</h1></div>
+        <div id="screen"></div>
+        <div id="lower-cnt">
+            <button type="submit" id="AC" onclick="calculation(this);">AC</button>
+            <button type="submit" id="plus-minus" onclick="changethesign(this);">+/-</button>
+            <button type="submit" id="backspace" onclick="calculation(this);"><i class="fas fa-backspace"></i></button>
+            <button type="submit" id="seven" onclick="calculation(this);">7</button>
+            <button type="submit" id="eight" onclick="calculation(this);">8</button>
+            <button type="submit" id="nine" onclick="calculation(this);">9</button>
+            <button type="submit" id="divide" onclick="calculation(this);">/</button>
+            <button type="submit" id="four" onclick="calculation(this);">4</button>
+            <button type="submit" id="five" onclick="calculation(this);">5</button>
+            <button type="submit" id="six" onclick="calculation(this);">6</button>
+            <button type="submit" id="multiply" onclick="calculation(this);">*</button>
+            <button type="submit" id="one" onclick="calculation(this);">1</button>
+            <button type="submit" id="two" onclick="calculation(this);">2</button>
+            <button type="submit" id="three" onclick="calculation(this);">3</button>
+            <button type="submit" id="subtract" onclick="calculation(this);">-</button>
+            <button type="submit" id="zero" onclick="calculation(this);">0</button>
+            <button type="submit" id="decimal" onclick="calculation(this);">.</button>
+            <button type="submit" id="equal" onclick="calculate();">=</button>
+            <button type="submit" id="add" onclick="calculation(this);">+</button>
+        </div>
+    </main>
+    <script src="https://kit.fontawesome.com/ea1f5478aa.js" crossorigin="anonymous"></script>
+    <script type="text/javascript" src="calculator.js"> </script>
+    
+</body>
+</html>
